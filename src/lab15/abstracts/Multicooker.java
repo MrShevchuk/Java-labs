@@ -19,6 +19,7 @@ public class Multicooker extends AbstractCooker {
 
     @Override
     protected void powerOn() {
+        System.out.println("Включаем мультиварку:");
         super.powerOn();
     }
 

@@ -7,9 +7,10 @@ public class SmartPhone extends  Mobile implements Caller, EmailSender {
 
     private String os;
 
+
     public void runApp () {
 
-        System.out.println("Для запуска нужного приложения выбираем его из списка на дисплее телефон и нажимаем на его иконку");
+        System.out.println("Run");
 
     }
 
@@ -23,7 +24,9 @@ public class SmartPhone extends  Mobile implements Caller, EmailSender {
 
     @Override
     protected void powerOn() {
+        System.out.println("Запускаем смартфон:");
         super.powerOn();
+
     }
 
     @Override
@@ -78,16 +81,17 @@ public class SmartPhone extends  Mobile implements Caller, EmailSender {
 
     @Override
     public String createMail(String mail) {
-        return null;
+        return mail;
     }
 
     @Override
     public void sendMail(String mail) {
+        System.out.println("Отправляем письмо со смартфона: " + mail);
 
     }
 
     @Override
     public void call() {
-
+        System.out.println("Звоним со сматрфона");
     }
 }

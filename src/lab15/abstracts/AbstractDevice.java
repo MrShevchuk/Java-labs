@@ -5,9 +5,9 @@ public abstract class AbstractDevice {
    private String name;
    private Integer serialNumber;
 
+
     protected abstract void powerOn ();
     protected abstract void powerOff ();
-
 
 
     public String getName() {

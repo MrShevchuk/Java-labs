@@ -8,7 +8,7 @@ public class DialPhone extends Phone implements Caller {
 
     protected void powerOn() {
 
-        System.out.println("Подключаем телефон к розетке. Передвигаем кнопку в положение" + " вкл.");
+        System.out.println("Звоним с стационарного телефона: \nПодключаем телефон к розетке. Передвигаем кнопку в положение" + " вкл.");
 
     }
 

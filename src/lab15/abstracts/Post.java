@@ -11,7 +11,7 @@ public class Post implements MailSender {
 
         @Override
         public void sendMail(String mail) {
-            System.out.println("Manual send: " + mail);
+            System.out.println("Отправляем вручную текст: " + mail);
         }
 
 }
