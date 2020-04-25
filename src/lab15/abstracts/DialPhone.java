@@ -1,8 +1,10 @@
 package lab15.abstracts;
 
-public class DiaPhone extends Phone{
+import lab15.intefaces.Caller;
 
-    protected Boolean hasAnswerPhone;
+public class DialPhone extends Phone implements Caller {
+
+    private Boolean hasAnswerPhone;
 
     protected void powerOn() {
 
@@ -16,17 +18,11 @@ public class DiaPhone extends Phone{
 
     }
 
-    void call () {
-
-        System.out.println("Поднимаем трубку, набираем номер, звоним.");
-
-    }
-
-    void  autoAnswer () {
+    public void  autoAnswer() {
 
         System.out.println("Для уведомления о пропущенных сообщениях нажимаем на кнопку AutoAnswer");
-
     }
+
 
     public Boolean getHasAnswerPhone() {
         return hasAnswerPhone;
@@ -54,5 +50,10 @@ public class DiaPhone extends Phone{
     @Override
     public void setSerialNumber(Integer serialNumber) {
         super.setSerialNumber(serialNumber);
+    }
+
+    @Override
+    public void call() {
+        System.out.println("Поднимаем трубку, набираем номер, звоним.");
     }
 }

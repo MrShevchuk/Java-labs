@@ -1,6 +1,9 @@
 package lab15.abstracts;
 
-public class SmartPhone extends  Mobile{
+import lab15.intefaces.Caller;
+import lab15.intefaces.EmailSender;
+
+public class SmartPhone extends  Mobile implements Caller, EmailSender {
 
     private String os;
 
@@ -26,11 +29,6 @@ public class SmartPhone extends  Mobile{
     @Override
     protected void powerOff() {
         super.powerOff();
-    }
-
-    @Override
-    void call() {
-        super.call();
     }
 
     @Override
@@ -71,5 +69,25 @@ public class SmartPhone extends  Mobile{
     @Override
     public void setSerialNumber(Integer serialNumber) {
         super.setSerialNumber(serialNumber);
+    }
+
+    @Override
+    public String editMail(String mail) {
+        return null;
+    }
+
+    @Override
+    public String createMail(String mail) {
+        return null;
+    }
+
+    @Override
+    public void sendMail(String mail) {
+
+    }
+
+    @Override
+    public void call() {
+
     }
 }
