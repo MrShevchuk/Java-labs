@@ -9,7 +9,9 @@ public abstract class AbstractCooker extends AbstractDevice {
 
     }
 
-    protected void powerOff(){}
+    protected void powerOff(){
+        System.out.println("Печь выключается.");
+    }
 
     abstract void cook ();
 

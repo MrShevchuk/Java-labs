@@ -1,8 +1,11 @@
 package lab15.intefaces;
 
+import lab15.abstracts.AbstractDevice;
 import lab15.abstracts.DialPhone;
 import lab15.abstracts.Post;
 import lab15.abstracts.SmartPhone;
+
+import java.util.Arrays;
 
 public class Test {
 
@@ -23,5 +26,12 @@ public class Test {
         smartPhone1.sendMail(message);
 
 
+    }
+
+    private static void sendMess (MailSender ...items) {
+        for (MailSender spam : items) {
+            spam.sendMail("This is SPAM");
+            System.out.println(spam);
+        }
     }
 }

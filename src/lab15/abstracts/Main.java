@@ -1,5 +1,7 @@
 package lab15.abstracts;
 
+import java.math.BigDecimal;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -14,7 +16,6 @@ public class Main {
         cooker2.powerOn();
         cooker2.cook();
         cooker2.powerOff();
-
 
         Phone mobile = new Mobile();
         mobile.powerOn();
@@ -34,4 +35,16 @@ public class Main {
         smartPhone.powerOff();
 
     }
-}
+
+
+        private static void turnOffAll(AbstractDevice... items) {
+            for (AbstractDevice device : items) {
+                device.powerOff();
+                System.out.println("Turn all devices off " + device);
+            }
+        }
+    }
+
+
+
+

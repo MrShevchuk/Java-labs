@@ -12,6 +12,7 @@ public class DialPhone extends Phone implements Caller {
 
     }
 
+
     protected void powerOff() {
 
         System.out.println("Передвигаем кнопку в положение выкл и выключаем телефон с розетки." );

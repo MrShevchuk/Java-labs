@@ -14,6 +14,7 @@ public class Oven extends AbstractCooker {
 
     }
 
+
     @Override
     protected void powerOn() {
         System.out.println("Включаем духовку:");

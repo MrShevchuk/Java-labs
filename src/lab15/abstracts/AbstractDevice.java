@@ -26,5 +26,4 @@ public abstract class AbstractDevice {
         this.serialNumber = serialNumber;
     }
 
-
 }
