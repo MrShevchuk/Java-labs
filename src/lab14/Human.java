@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class Human {
 
-    String name;
-    String birthday;
-    String phoneNumber;
+    private String name;
+    private String birthday;
+    private String phoneNumber;
 
 
     public Human(String name, String phoneNumber) {
@@ -14,7 +14,29 @@ public class Human {
         this.phoneNumber = phoneNumber;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
     public void sayHello(){
         System.out.println("Hello everybody");

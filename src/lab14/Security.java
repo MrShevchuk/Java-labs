@@ -45,11 +45,6 @@ public class Security extends Employee {
                 "hireDate='" + hireDate + '\'' +
                 ", salary=" + salary +
                 ", isPresent=" + isPresent +
-                ", name='" + name + '\'' +
-                ", birthday='" + birthday + '\'' +
-                ", phoneNumber=" + phoneNumber +
                 '}';
     }
-
-
 }
