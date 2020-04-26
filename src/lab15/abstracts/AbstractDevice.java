@@ -6,9 +6,13 @@ public abstract class AbstractDevice {
    private Integer serialNumber;
 
 
-    protected abstract void powerOn ();
+//    protected abstract void powerOn ();
     protected abstract void powerOff ();
 
+
+    public void powerOn() {
+        System.out.println("Turn the device on");
+    };
 
     public String getName() {
         return name;

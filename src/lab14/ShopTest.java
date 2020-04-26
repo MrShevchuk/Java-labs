@@ -38,11 +38,6 @@ public class ShopTest {
         security.haveABreakfast();
         cashier.haveABreakfast();
 
-
-
-
-
-
     }
 
 }

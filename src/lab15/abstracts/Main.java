@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class Main {
 
     public static void main(String[] args) {
-
+        
 
         AbstractCooker cooker1 = new Multicooker();
         cooker1.powerOn();

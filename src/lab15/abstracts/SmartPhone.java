@@ -9,9 +9,7 @@ public class SmartPhone extends  Mobile implements Caller, EmailSender {
 
 
     public void runApp () {
-
         System.out.println("Run");
-
     }
 
     public String getOs() {
@@ -23,10 +21,9 @@ public class SmartPhone extends  Mobile implements Caller, EmailSender {
     }
 
     @Override
-    protected void powerOn() {
+    public void powerOn() {
         System.out.println("Запускаем смартфон:");
         super.powerOn();
-
     }
 
     @Override

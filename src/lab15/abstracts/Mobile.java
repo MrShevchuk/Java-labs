@@ -5,23 +5,18 @@ public class Mobile extends Phone {
     protected Integer simCount;
     protected String display;
 
-    protected void powerOn() {
-
+    @Override
+    public void powerOn() {
         System.out.println("Зажимаем кнопку включения. Мобильный телефон запускается");
-
     }
 
-
+    @Override
     protected void powerOff() {
-
         System.out.println("Зажимаем кнопку выключения. Мобильный телефон выключается");
-
     }
 
     void call () {
-
         System.out.println("Выбираем контакт из меню, звоним");
-
     }
 
     public Integer getSimCount() {

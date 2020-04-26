@@ -3,22 +3,17 @@ package lab15.abstracts;
 public class Multicooker extends AbstractCooker {
 
     protected void switchProgram (int button) {
-
         switchProgram(1);
-
         System.out.println("При нажатии разных кнопок на дисплее выбираем режим готовки.");
-
     }
-
-    public void cook() {
-
-        System.out.println("Готовится еда.");
-
-    }
-
 
     @Override
-    protected void powerOn() {
+    public void cook() {
+        System.out.println("Готовится еда.");
+    }
+
+    @Override
+    public void powerOn() {
         System.out.println("Включаем мультиварку:");
         super.powerOn();
     }

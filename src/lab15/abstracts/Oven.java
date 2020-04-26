@@ -5,18 +5,15 @@ public class Oven extends AbstractCooker {
     void initTimer (int handle) {
         this.initTimer(1);
         System.out.println("Выставляем ручку таймера на нужное нам время.");
-
     }
-
-    public void cook(){
-
-        System.out.println("Готовится еда.");
-
-    }
-
 
     @Override
-    protected void powerOn() {
+    public void cook(){
+        System.out.println("Готовится еда.");
+    }
+
+    @Override
+    public void powerOn() {
         System.out.println("Включаем духовку:");
         super.powerOn();
     }
