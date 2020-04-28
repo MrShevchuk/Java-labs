@@ -137,16 +137,13 @@ public class TestArrays {
             for (long[] row : matrix) {
                 Arrays.fill(row, ++ratio);
             }
-
             for (int u = 0; u < matrix.length; u++) {
                 long maxIndexV = 0;
                 long minIndexV = 0;
-                for (int o = 0; o < matrix.length; o++) {
-
+                for (int o = 0; o < matrix[u].length; o++) {
                     if (2 < u && u <= 5 && (o + 1) % 3 == 0) {
 
                         if (maxIndexV < matrix[u][o]) {
-
                             maxIndex = matrix[u][o];
 
                             if (minIndexV > matrix[u][o]) {
@@ -155,10 +152,8 @@ public class TestArrays {
                         }
                     }
                 }
-
                 System.out.println("Sum = " + minIndexV + " " + maxIndexV);
             }
-
     }
 }
 
