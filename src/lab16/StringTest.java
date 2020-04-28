@@ -3,6 +3,7 @@ package lab16;
 import org.w3c.dom.ls.LSOutput;
 
 import javax.xml.transform.sax.SAXResult;
+import java.util.Arrays;
 
 public class StringTest {
 
@@ -34,7 +35,28 @@ public class StringTest {
          *
          */
 
-        String fruits = "Апельсин,Яблоко,Гранат,Груша";
+        String fruits = "Апельсин,Яблоко,Гранат,Груша";         // use method SPLIT
+        String fruit1 = new String("Апельсин");
+        String fruit2 = new String("Яблоко");
+        String fruit3 = new String("Гранат");
+        String fruit4 = new String("Груша");
+
+        String[] splitString = fruits.split(" ", 4);
+        System.out.println(Arrays.toString(splitString));
+
+        fruits = fruits.toLowerCase();
+        fruit1 = fruit1.substring(0,3);
+        fruit2 = fruit2.substring(0,3);
+        fruit3 = fruit3.substring(0,3);
+        fruit4 = fruit4.substring(0,3);
+
+
+        System.out.println(fruits);
+        System.out.println(fruits.length());
+        System.out.println(fruit1 + "\n" + fruit2 + "\n" .concat(fruit3) + "\n".concat(fruit4));
+
 
     }
+
+
 }

@@ -137,23 +137,23 @@ public class TestArrays {
             for (long[] row : matrix) {
                 Arrays.fill(row, ++ratio);
             }
+        long maxIndexV = matrix [0][0];
+        long minIndexV = matrix [0][0];
+        long sumAr = 0;
             for (int u = 0; u < matrix.length; u++) {
-                long maxIndexV = 0;
-                long minIndexV = 0;
                 for (int o = 0; o < matrix[u].length; o++) {
                     if (2 < u && u <= 5 && (o + 1) % 3 == 0) {
-
                         if (maxIndexV < matrix[u][o]) {
-                            maxIndex = matrix[u][o];
-
+                            maxIndexV = matrix[u][o];
                             if (minIndexV > matrix[u][o]) {
                                 minIndexV = matrix[u][o];
                             }
                         }
                     }
+                    sumAr = minIndexV + maxIndexV;
                 }
-                System.out.println("Sum = " + minIndexV + " " + maxIndexV);
             }
+        System.out.println("Sum = " + sumAr);
     }
 }
 
