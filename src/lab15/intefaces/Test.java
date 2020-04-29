@@ -25,13 +25,14 @@ public class Test {
         String message = smartPhone1.createMail("Hello Google");
         smartPhone1.sendMail(message);
 
+        sendMess(smartPhone1);
 
     }
 
     private static void sendMess (MailSender ...items) {
         for (MailSender spam : items) {
+            System.out.println("Отправляем сообщение c " + spam);
             spam.sendMail("This is SPAM");
-            System.out.println(spam);
         }
     }
 }

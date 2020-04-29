@@ -54,5 +54,13 @@ public class Mobile extends Phone {
     public void setSerialNumber(Integer serialNumber) {
         super.setSerialNumber(serialNumber);
     }
+
+    @Override
+    public String toString() {
+        return "Mobile{" +
+                "simCount=" + simCount +
+                ", display='" + display + '\'' +
+                '}';
+    }
 }
 

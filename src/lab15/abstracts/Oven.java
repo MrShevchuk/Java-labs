@@ -42,4 +42,9 @@ public class Oven extends AbstractCooker {
     public void setSerialNumber(Integer serialNumber) {
         super.setSerialNumber(serialNumber);
     }
+
+    @Override
+    public String toString() {
+        return "Oven{}";
+    }
 }

@@ -33,14 +33,14 @@ public class Main {
         smartPhone.powerOn();
         smartPhone.call();
         smartPhone.powerOff();
-
+        turnOffAll(dialPhone,smartPhone, cooker1,cooker2);
     }
 
 
         private static void turnOffAll(AbstractDevice... items) {
             for (AbstractDevice device : items) {
                 device.powerOff();
-                System.out.println("Turn all devices off " + device);
+                System.out.println("Turn all devices off: " + device);
             }
         }
     }

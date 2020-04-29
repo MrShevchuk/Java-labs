@@ -9,21 +9,20 @@ public class StringTest {
 
     public static void main(String[] args) {
 
-/**
- *  1 task.
- *
- *  Create String different variables.
- */
+        /**
+         *  1 task.
+         *  Create String different variables.
+         */
 
-        String corona = "COVID-19";         // literal
+        String corona = "COVID-19";                                     // literal
 
-        String corona1 = new String("COVID-19");        // new
+        String corona1 = new String("COVID-19");                // new
 
         char virus[] = {'C', 'O', 'V', 'I', 'D', '-', '1', '9'};        // arrays
         String corona19 = new String(virus);
 
         String virus1 = "C-19";
-      //  String virus2 = new String(virus1.getBytes);        // bytes
+      //  String virus2 = new String(virus1.getBytes);                  // bytes
 
         StringBuilder coronavirus = new StringBuilder("COVID-19");      // StringBuilder
         String virus19 = new String(coronavirus);
@@ -32,10 +31,9 @@ public class StringTest {
         /**
          *  2 task.
          *  Work with the String.
-         *
          */
 
-        String fruits = "Апельсин,Яблоко,Гранат,Груша";         // use method SPLIT
+        String fruits = "Апельсин,Яблоко,Гранат,Груша";                 // use method SPLIT
         String fruit1 = new String("Апельсин");
         String fruit2 = new String("Яблоко");
         String fruit3 = new String("Гранат");
@@ -44,7 +42,7 @@ public class StringTest {
         String[] splitString = fruits.split(" ", 4);
         System.out.println(Arrays.toString(splitString));
 
-        fruits = fruits.toLowerCase();
+        fruits = fruits.toLowerCase();                                  //creations
         fruit1 = fruit1.substring(0,3);
         fruit2 = fruit2.substring(0,3);
         fruit3 = fruit3.substring(0,3);

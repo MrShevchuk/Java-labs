@@ -54,4 +54,11 @@ public class DialPhone extends Phone implements Caller {
     public void call() {
         System.out.println("Поднимаем трубку, набираем номер, звоним.");
     }
+
+    @Override
+    public String toString() {
+        return "DialPhone{" +
+                "hasAnswerPhone=" + hasAnswerPhone +
+                '}';
+    }
 }

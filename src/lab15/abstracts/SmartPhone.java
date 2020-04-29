@@ -84,11 +84,19 @@ public class SmartPhone extends  Mobile implements Caller, EmailSender {
     @Override
     public void sendMail(String mail) {
         System.out.println("Отправляем письмо со смартфона: " + mail);
-
     }
 
     @Override
     public void call() {
         System.out.println("Звоним со сматрфона");
+    }
+
+    @Override
+    public String toString() {
+        return "SmartPhone{" +
+                "os='" + os + '\'' +
+                ", simCount=" + simCount +
+                ", display='" + display + '\'' +
+                '}';
     }
 }
