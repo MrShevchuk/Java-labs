@@ -4,6 +4,7 @@ import org.w3c.dom.ls.LSOutput;
 
 import javax.xml.transform.sax.SAXResult;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class StringTest {
 
@@ -52,6 +53,26 @@ public class StringTest {
         System.out.println(fruits);
         System.out.println(fruits.length());
         System.out.println(fruit1 + "\n" + fruit2 + "\n" .concat(fruit3) + "\n".concat(fruit4));
+
+
+        String str = "  Я_новая_строка   ";
+        str = str.trim();
+        str = str.replace('_', ' ');
+        System.out.println(str);
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("Вы ввели: <ваш текст>");
+
+        StringBuilder sb = new StringBuilder(20);
+        sb.append(virus19 + ", ")
+                .append(fruits + " ")
+                .append(fruit1+ " ")
+                .append(fruit2+ " ")
+                .append(fruit3+ " ")
+                .append(fruit4+ ", ")
+                .append(str + ".");
+        String result = sb.toString();
+        System.out.println(result);
 
 
     }
