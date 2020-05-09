@@ -1,5 +1,8 @@
 package lab12.technics;
 
+import java.util.Date;
+
+
 /**
  *  Паспорт на технику.
  */
@@ -10,14 +13,14 @@ public class Passport {
     String description;
     String color;
     String country;
-    String warrantyStartDate;
+    Date warrantyStartDate;
 
-    public Passport(int number, String description, String color, String country, String warrantyStartDate) {
+    public Passport(int number, String description, String color, String country) {
         this.number = number;
         this.description = description;
         this.color = color;
         this.country = country;
-        this.warrantyStartDate = warrantyStartDate;
+        this.warrantyStartDate = new Date();
     }
 
     public int getNumber() {
@@ -52,11 +55,11 @@ public class Passport {
         this.country = country;
     }
 
-    public String getWarrantyStartDate() {
+    public Date getWarrantyStartDate() {
         return warrantyStartDate;
     }
 
-    public void setWarrantyStartDate(String warrantyStartDate) {
+    public void setWarrantyStartDate(Date warrantyStartDate) {
         this.warrantyStartDate = warrantyStartDate;
     }
 
