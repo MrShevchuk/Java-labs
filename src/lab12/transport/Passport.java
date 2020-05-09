@@ -67,7 +67,7 @@ public class Passport {
                 "number = " + number +
                 ", autoName = '" + autoName + '\'' +
                 ", color = '" + color + '\'' +
-                ", registrationDate = " + registrationDate + " March" +
+                ", registrationDate = " + registrationDate + " March" + " 2020" +
                 ", ownerName='" + ownerName + '\'' +
                 '}';
     }

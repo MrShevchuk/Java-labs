@@ -14,9 +14,11 @@ public class Store extends User {
     }
 
 
-    public void login (String name, String password) {
+    public String login (String name, String password) {
         super.name = name;
         super.password = password;
+        return authorizedUser;
+
 
     }
 
@@ -38,6 +40,8 @@ public class Store extends User {
             case ADMINISTRATOR:
                 System.out.println("Администратор магазина, может добавлять товары и редактировать их описание");
                 break;
+            default:
+                System.out.println("Error");
         }
     }
 

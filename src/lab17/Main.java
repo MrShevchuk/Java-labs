@@ -11,14 +11,20 @@ public class Main {
         User user5 = new User("user5", "1237", "Anastasia", EmployeePositions.MANAGER);
 
 
-        Store store = new Store();
+        Store store = new Store("","","",EmployeePositions.ADMINISTRATOR);
+
         store.shopName = "Java shop";
         store.url = "687464";
         store.allUsers = new EmployeePositions[]{EmployeePositions.DIRECTOR, EmployeePositions.ADMINISTRATOR, EmployeePositions.CLIENT, EmployeePositions.MANAGER, EmployeePositions.ANONYMOUS};
-        store.login("_", "__");
-
-
+        store.login("Ivan", "1230");
+        store.getCurrentUserRights();
+        store.logout();
         System.out.println(store);
+
+    }
+
+    public static void tryLogin (Store store) {
+
     }
 
 }
