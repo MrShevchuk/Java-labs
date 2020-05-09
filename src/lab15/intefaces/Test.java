@@ -25,7 +25,7 @@ public class Test {
         String message = smartPhone1.createMail("Hello Google");
         smartPhone1.sendMail(message);
 
-        sendMess(smartPhone1);
+        sendMess(smartPhone1, post);
 
     }
 

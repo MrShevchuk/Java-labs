@@ -157,5 +157,3 @@ public class TestArrays {
     }
 }
 
-           // System.out.println("Выводим сумму = " + maxIndexV + minIndexV);
-//            System.out.println("Выводим минимальное значение " + minIndexV);

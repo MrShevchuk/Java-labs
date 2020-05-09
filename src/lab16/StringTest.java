@@ -23,7 +23,7 @@ public class StringTest {
         String corona19 = new String(virus);
 
         String virus1 = "C-19";
-      //  String virus2 = new String(virus1.getBytes);                  // bytes
+        //String virus2 = new String(virus1.getBytes);                  // bytes
 
         StringBuilder coronavirus = new StringBuilder("COVID-19");      // StringBuilder
         String virus19 = new String(coronavirus);
@@ -43,7 +43,7 @@ public class StringTest {
         String[] splitString = fruits.split(" ", 4);
         System.out.println(Arrays.toString(splitString));
 
-        fruits = fruits.toLowerCase();                                  //creations
+        fruits = fruits.toLowerCase();                                  // creations
         fruit1 = fruit1.substring(0,3);
         fruit2 = fruit2.substring(0,3);
         fruit3 = fruit3.substring(0,3);
@@ -60,7 +60,11 @@ public class StringTest {
         str = str.replace('_', ' ');
         System.out.println(str);
 
-        Scanner in = new Scanner(System.in);
+        /**
+        * Work with the scanner. Create and print.
+         */
+
+        Scanner in = new Scanner(System.in);                            // scanner
         System.out.println("Вы ввели: <ваш текст>");
 
         StringBuilder sb = new StringBuilder(20);

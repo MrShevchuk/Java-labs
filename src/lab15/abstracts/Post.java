@@ -14,4 +14,8 @@ public class Post implements MailSender {
             System.out.println("Отправляем вручную текст: " + mail);
         }
 
+    @Override
+    public String toString() {
+        return "Post{}";
+    }
 }
