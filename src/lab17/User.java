@@ -14,6 +14,9 @@ public class User {
         this.role = role;
     }
 
+    public User(User user1, User user2, User user3, User user4, User user5) {
+    }
+
 
     public String getLogin() {
         return login;
@@ -47,13 +50,5 @@ public class User {
         this.role = role;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
-                ", role=" + role +
-                '}';
-    }
+
 }

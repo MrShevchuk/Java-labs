@@ -7,18 +7,34 @@ public class Store extends User {
     String shopName;
     String url;
     EmployeePositions[] allUsers;
-    String authorizedUser;
+    static String authorizedUser;
+
+
 
     public Store(String login, String password, String name, EmployeePositions role) {
         super(login, password, name, role);
     }
 
+    public Store(User user1, User user2, User user3, User user5, User user4) {
+        super(user1, user2, user3, user4, user5);
+    }
 
-    public String login (String name, String password) {
-        super.name = name;
-        super.password = password;
-        return authorizedUser;
+    public static void login (String login, String password){
 
+        for (EmployeePositions pos:EmployeePositions.values()) {
+            if (!login.equals(pos.name()) && !password.equals(pos.name())) {
+                System.out.println("Login and password aren't correct.");
+            } else {
+                login = authorizedUser;
+                System.out.println("Authorisation's complete.");
+            }
+//            if (password != pos.name()) {
+//                System.out.println("Password isn't correct.");
+//            } else {
+//                password = authorizedUser;
+//                System.out.println("Authorisation's complete.");
+//            }
+        }
 
     }
 
@@ -47,7 +63,7 @@ public class Store extends User {
 
 
     public void logout() {
-        this.authorizedUser = null;
+        authorizedUser = null;
         System.out.println("Пользователь вышел из системы");
 
     }
@@ -81,7 +97,7 @@ public class Store extends User {
     }
 
     public void setAuthorizedUser(String authorizedUser) {
-        this.authorizedUser = authorizedUser;
+        Store.authorizedUser = authorizedUser;
     }
 
     @Override
@@ -91,6 +107,12 @@ public class Store extends User {
                 ", url='" + url + '\'' +
                 ", allUsers=" + Arrays.toString(allUsers) +
                 ", authorizedUser='" + authorizedUser + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", role=" + role +
                 '}';
     }
 }
+
+
