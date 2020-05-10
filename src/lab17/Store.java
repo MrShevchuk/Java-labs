@@ -19,15 +19,16 @@ public class Store extends User {
         super(user1, user2, user3, user4, user5);
     }
 
-    public static void login (String login, String password){
+    public static boolean login (String login, String password){
 
         for (EmployeePositions pos:EmployeePositions.values()) {
             if (!login.equals(pos.name()) && !password.equals(pos.name())) {
-                System.out.println("Login and password aren't correct.");
+                System.out.println("Login or password aren't correct.");
             } else {
                 login = authorizedUser;
                 System.out.println("Authorisation's complete.");
             }
+
 //            if (password != pos.name()) {
 //                System.out.println("Password isn't correct.");
 //            } else {
@@ -36,6 +37,7 @@ public class Store extends User {
 //            }
         }
 
+        return false;
     }
 
     public void getCurrentUserRights() {

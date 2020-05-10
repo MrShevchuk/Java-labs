@@ -19,22 +19,22 @@ public class Main {
         store.url = "https://www.starbucks.com/";
         store.allUsers = new EmployeePositions[]{EmployeePositions.DIRECTOR, EmployeePositions.ADMINISTRATOR, EmployeePositions.CLIENT, EmployeePositions.MANAGER, EmployeePositions.ANONYMOUS};
         tryLogin(store);
-//        if (Store.login("user2", "1234")) {
-//            System.out.println("Loading...");
-//            store.getCurrentUserRights();
-//            System.out.println("User's finished his work.");
-//            store.logout();
-//
-//        } else {
-//            System.out.println("Wrong login or password.");
-//        }
-
-        Store.login("user2", "1234");
+        if (Store.login("user2", "1234")) {
             System.out.println("Loading...");
             store.getCurrentUserRights();
             System.out.println("User's finished his work.");
             store.logout();
+
+        } else {
             System.out.println("Wrong login or password.");
+        }
+
+//        Store.login("user2", "1234");
+//            System.out.println("Loading...");
+//            store.getCurrentUserRights();
+//            System.out.println("User's finished his work.");
+//            store.logout();
+//            System.out.println("Wrong login or password.");
 
         System.out.println(store);
 
