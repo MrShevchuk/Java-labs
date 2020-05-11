@@ -40,6 +40,7 @@ public class Store extends User {
         return false;
     }
 
+
     public void getCurrentUserRights() {
 
         switch (getRole()) {

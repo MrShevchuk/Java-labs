@@ -18,8 +18,8 @@ public class Main {
         store.shopName = "Starbucks";
         store.url = "https://www.starbucks.com/";
         store.allUsers = new EmployeePositions[]{EmployeePositions.DIRECTOR, EmployeePositions.ADMINISTRATOR, EmployeePositions.CLIENT, EmployeePositions.MANAGER, EmployeePositions.ANONYMOUS};
-        tryLogin(store);
-        if (Store.login("user2", "1234")) {
+        tryLogin();
+        if (Store.login("", "")) {
             System.out.println("Loading...");
             store.getCurrentUserRights();
             System.out.println("User's finished his work.");
@@ -38,17 +38,17 @@ public class Main {
 
         System.out.println(store);
 
-        tryLogin(store);
+
     }
 
-    public static void tryLogin(Store store) {
-
-//        System.out.println("Введите логин");
-//        Scanner sc = new Scanner(store.login);
-//        String login = sc.next(store.login);
-//        System.out.println("Введите пароль");
-//        String pass = sc.next(store.password);
-//        System.out.println(login + pass);
+    static void tryLogin() {
+        Store store1 = new Store( "user2","1234","Alina",EmployeePositions.DIRECTOR);
+        System.out.println("Введите логин: ");
+        Scanner scanner = new Scanner(System.in);
+        store1.setLogin(scanner.nextLine());
+        System.out.println("Введите пароль: ");
+        store1.setPassword(scanner.nextLine());
+        System.out.printf("%s %s%n", store1.getLogin(), store1.getPassword());
     }
 
 }

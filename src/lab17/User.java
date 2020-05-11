@@ -10,7 +10,6 @@ public class User {
     public User(String login, String password, String name, EmployeePositions role) {
         this.login = login;
         this.password = password;
-        this.name = name;
         this.role = role;
     }
 
