@@ -13,6 +13,12 @@ public class User {
         this.role = role;
     }
 
+    public static User [] userList(User... users) {
+        for (User user : users) {
+        }
+        return users;
+    }
+
     public User(User user1, User user2, User user3, User user4, User user5) {
     }
 
@@ -50,4 +56,6 @@ public class User {
     }
 
 
+    public void setAllUsers(User[] userList) {
+    }
 }

@@ -14,12 +14,12 @@ public class Main {
 
 
         Store store = new Store(user1, user2, user3, user4, user5);
-
+        store.setAllUsers(Store.userList(user1, user2, user3, user4, user5));
         store.shopName = "Starbucks";
         store.url = "https://www.starbucks.com/";
         store.allUsers = new EmployeePositions[]{EmployeePositions.DIRECTOR, EmployeePositions.ADMINISTRATOR, EmployeePositions.CLIENT, EmployeePositions.MANAGER, EmployeePositions.ANONYMOUS};
         tryLogin();
-        if (Store.login("", "")) {
+        if (Store.login("user4", "1236")) {
             System.out.println("Loading...");
             store.getCurrentUserRights();
             System.out.println("User's finished his work.");
@@ -42,7 +42,7 @@ public class Main {
     }
 
     static void tryLogin() {
-        Store store1 = new Store( "user2","1234","Alina",EmployeePositions.DIRECTOR);
+        Store store1 = new Store("user4","1236","Alina",EmployeePositions.DIRECTOR);
         System.out.println("Введите логин: ");
         Scanner scanner = new Scanner(System.in);
         store1.setLogin(scanner.nextLine());
