@@ -44,10 +44,10 @@ public class Main {
     static void tryLogin() {
         Store store1 = new Store("user4","1236","Alina",EmployeePositions.DIRECTOR);
         System.out.println("Введите логин: ");
-        Scanner scanner = new Scanner(System.in);
-        store1.setLogin(scanner.nextLine());
+        Scanner sc = new Scanner(System.in);
+        store1.setLogin(sc.nextLine());
         System.out.println("Введите пароль: ");
-        store1.setPassword(scanner.nextLine());
+        store1.setPassword(sc.nextLine());
         System.out.printf("%s %s%n", store1.getLogin(), store1.getPassword());
     }
 

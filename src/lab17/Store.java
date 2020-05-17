@@ -25,7 +25,7 @@ public class Store extends User {
             if (!login.equals(pos.name()) && !password.equals(pos.name())) {
                 System.out.println("Login or password aren't correct.");
             } else {
-                login = authorizedUser;
+                 authorizedUser = login;
                 System.out.println("Authorisation's complete.");
             }
 
@@ -116,5 +116,3 @@ public class Store extends User {
                 '}';
     }
 }
-
-
