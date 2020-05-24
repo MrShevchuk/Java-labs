@@ -21,6 +21,10 @@ public class WrapperTest {
             float f = d.floatValue();
             long l = d.longValue();
 
+            /**
+             * Create and check variable "Is NaN or Infinite".
+             */
+
             Double d2 = 0.0;
             Double nanValue = d2/d;
             Double infinityValue = d2/d2;
