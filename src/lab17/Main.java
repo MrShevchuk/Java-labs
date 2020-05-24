@@ -1,54 +1,36 @@
 package lab17;
 
+import lab14.Employee;
+
 import java.util.Scanner;
 
 public class Main {
+        public static void main(String[] args) {
+            User user1 = new User("user1", "1234", "Slava", EmployeePositions.DIRECTOR);
+            User use2 = new User("user2", "1233", "Nastya", EmployeePositions.ADMINISTRATOR);
+            User use3 = new User("user3", "1232", "Roman", EmployeePositions.MANAGER);
+            User use4 = new User("user4", "1231", "Alina", EmployeePositions.CLIENT);
+            User use5 = new User("user5", "1230", "Michael", EmployeePositions.ANONYMOUS);
 
-    public static void main(String[] args) {
-
-        User user1 = new Store("user1", "1230", "Ivan", EmployeePositions.ADMINISTRATOR);
-        User user2 = new Store("user2", "1234", "Alina", EmployeePositions.DIRECTOR);
-        User user3 = new Store("user3", "1235", "Senya", EmployeePositions.CLIENT);
-        User user4 = new Store("user4", "1236", "Vasily", EmployeePositions.ANONYMOUS);
-        User user5 = new Store("user5", "1237", "Anastasia", EmployeePositions.MANAGER);
-
-
-        Store store = new Store(user1, user2, user3, user4, user5);
-        store.setAllUsers(Store.userList(user1, user2, user3, user4, user5));
-        store.shopName = "Starbucks";
-        store.url = "https://www.starbucks.com/";
-        store.allUsers = new EmployeePositions[]{EmployeePositions.DIRECTOR, EmployeePositions.ADMINISTRATOR, EmployeePositions.CLIENT, EmployeePositions.MANAGER, EmployeePositions.ANONYMOUS};
-        tryLogin();
-        if (Store.login("user4", "1236")) {
-            System.out.println("Loading...");
-            store.getCurrentUserRights();
-            System.out.println("User's finished his work.");
-            store.logout();
-
-        } else {
-            System.out.println("Wrong login or password.");
+            Store store = new Store("Starbucks", "https://www.starbucks.com/");
+            store.setUsers(Store.userList(user1, use2, use3, use4, use5));
+            for (; ; ) tryLogin(store);
         }
 
-//        Store.login("user2", "1234");
-//            System.out.println("Loading...");
-//            store.getCurrentUserRights();
-//            System.out.println("User's finished his work.");
-//            store.logout();
-//            System.out.println("Wrong login or password.");
+        static void tryLogin(Store store) {
 
-        System.out.println(store);
+            System.out.println("Enter login: ");
+            Scanner inputLogin = new Scanner(System.in);
+            Scanner inputPassword = new Scanner(System.in);
+            String login = inputLogin.nextLine();
+            System.out.println("Enter password: ");
+            String password = inputPassword.nextLine();
 
-
+            if (store.login(login, password)) {
+                store.getCurrentUserRights();
+                store.logout();
+            }
+        }
     }
 
-    static void tryLogin() {
-        Store store1 = new Store("user4","1236","Alina",EmployeePositions.DIRECTOR);
-        System.out.println("Введите логин: ");
-        Scanner sc = new Scanner(System.in);
-        store1.setLogin(sc.nextLine());
-        System.out.println("Введите пароль: ");
-        store1.setPassword(sc.nextLine());
-        System.out.printf("%s %s%n", store1.getLogin(), store1.getPassword());
-    }
 
-}

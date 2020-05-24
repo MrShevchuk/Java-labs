@@ -1,25 +1,30 @@
 package lab17;
 
 public class User {
-
-    public String login;
-    public String password;
-    public String name;
-    public EmployeePositions role = EmployeePositions.ANONYMOUS;
+    private String login;
+    private String password;
+    private String name;
+    private EmployeePositions role = EmployeePositions.ANONYMOUS;
 
     public User(String login, String password, String name, EmployeePositions role) {
         this.login = login;
         this.password = password;
+        this.name = name;
         this.role = role;
     }
 
-    public static User [] userList(User... users) {
-        for (User user : users) {
-        }
-        return users;
+    public User(Boolean login, String password, String name) {
+
     }
 
-    public User(User user1, User user2, User user3, User user4, User user5) {
+    public User() {
+
+    }
+    public boolean isLoginCorrect(String login) {
+        return login.equals(this.login);
+    }
+    protected boolean isPasswordCorrect(String password) {
+        return password.equals(this.password);
     }
 
 
@@ -55,7 +60,35 @@ public class User {
         this.role = role;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "login=" + login +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", role=" + role +
+                '}';
+    }
 
-    public void setAllUsers(User[] userList) {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        if (login != null ? !login.equals(user.login) : user.login != null) return false;
+        if (password != null ? !password.equals(user.password) : user.password != null) return false;
+        if (name != null ? !name.equals(user.name) : user.name != null) return false;
+        return role == user.role;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = login != null ? login.hashCode() : 0;
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (role != null ? role.hashCode() : 0);
+        return result;
     }
 }
