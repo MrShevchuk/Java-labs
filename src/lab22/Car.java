@@ -1,5 +1,14 @@
 package lab22;
 
+
+/**
+ * @author - Viacheslav Shevchuk
+ *
+ * Creation class Car with discription of cars' fields.
+ *
+ */
+
+
 public class Car implements Runnable {
 
     private String name;

@@ -2,15 +2,22 @@ package lab22;
 
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;
-
-
 import static java.lang.Thread.sleep;
+
+
+/**
+ * @author - Viacheslav Shevchuk
+ *
+ * Creation class RaceCarRunnable where we set a random speed (though method).
+ *
+ */
+
 
 public class RaceCarRunnable extends Car {
 
-    private int passed; // пройденная дистанция
-    private int distance; // длина трассы
-    private boolean isFinish; // флаг завершения гонки
+    private int passed;
+    private int distance;
+    private boolean isFinish;
     private CountDownLatch countDownLatch;
 
 

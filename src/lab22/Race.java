@@ -4,9 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.stream.Collectors;
-
 import static java.lang.Thread.sleep;
 
+
+/**
+ * @author - Viacheslav Shevchuk
+ *
+ * Creation class Race, that implements racing process with several cars.
+ * Each car has an own random speed. We also set time and distance.
+ *
+ */
 
 
 public class Race {
