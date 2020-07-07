@@ -1,9 +1,13 @@
 package lab22;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
+
+import static java.lang.System.currentTimeMillis;
 import static java.lang.Thread.sleep;
 
 
@@ -11,15 +15,17 @@ import static java.lang.Thread.sleep;
  * @author - Viacheslav Shevchuk
  *
  * Creation class Race, that implements racing process with several cars.
- * Each car has an own random speed. We also set time and distance.
+ * Each car has an own random speed. We also set time, maxSpeed and distance.
  *
  */
 
 
 public class Race {
 
+    public static AtomicLong startRaceTime;
+
     public static void main(String[] args) {
-        int count =6;
+        int count = 6;
         List<RaceCarRunnable> cars = new ArrayList<>();
         CountDownLatch countDownLatch = new CountDownLatch(count);
         cars.add(new RaceCarRunnable("Bugatti Chiron", 480, 1000, countDownLatch));
@@ -58,11 +64,14 @@ public class Race {
                     System.out.println("GO!!!");
                     for (Thread thread : cars) {
                         thread.start();
+                        long startRaceTime = currentTimeMillis();
+                        System.out.println(startRaceTime);
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
         }).start();
+
     }
 }

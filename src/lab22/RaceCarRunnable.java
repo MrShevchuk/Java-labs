@@ -3,6 +3,7 @@ package lab22;
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 import static java.lang.Thread.sleep;
+import static lab22.Race.startRaceTime;
 
 
 /**
@@ -19,7 +20,7 @@ public class RaceCarRunnable extends Car {
     private int distance;
     private boolean isFinish;
     private CountDownLatch countDownLatch;
-
+    private long finishTime;
 
     public RaceCarRunnable(String name, int maxSpeed, int distance, CountDownLatch countDownLatch) {
         super(name, maxSpeed);
@@ -28,6 +29,10 @@ public class RaceCarRunnable extends Car {
     }
 
     static int count = 1;
+
+    public long getFinishTime() {
+        return finishTime;
+    }
 
     public int getRandomSpeed() {
         int min = getMaxSpeed() / 2;
@@ -87,6 +92,8 @@ public class RaceCarRunnable extends Car {
                 sleep(1000);
                 if (passed >= distance) {
                     isFinish = true;
+//                    long result = startRaceTime - finishTime;
+//                    result = finishTime;
                 } else
                     System.out.println("Car's still going to finish... " + getName() + " on the move = " + getPassed() + " miles");
                 System.out.println("____  _____  _____  ____");
@@ -98,9 +105,8 @@ public class RaceCarRunnable extends Car {
         countDownLatch.countDown();
         if (passed >= distance) {
             System.out.println("=============");
-            System.out.println("Place = " + count++ + " -> " + getName());
+            System.out.println("Place = " + count++ + " -> " + getName() + " || " + "finish time: " + getFinishTime() + ".");
             System.out.println("=============");
-
         }
     }
 }
