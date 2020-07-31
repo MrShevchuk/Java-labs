@@ -1,11 +1,14 @@
 package lab19;
 
-public class GameConsole {
+public class GameConsole implements Powered {
 
         private Brand brand = Brand.MICROSOFT;
         private Models model = Models.XBOX_360;
         private String serial = "XC123QeWR";
         private boolean isOn;
+        private Object firstGamepad;
+        private Object secondGamepad;
+        private Game activeGame;
 
     {
         if (isOn)
@@ -24,11 +27,64 @@ public class GameConsole {
             this.serial = serial;
         }
 
-    class Gamepad {
-        private Brand brand = Brand.MICROSOFT;
+        @Override
+        public void powerOn() {
+            System.out.println("Console's running.");
+        }
+        @Override
+        public void powerOff() {
+            System.out.println("Console's powered off.");
+        }
+
+        public void loadGame (Game game) {
+        System.out.printf ("Игра %s загружается\n", game.getName());
+        this.activeGame = game;
+    }
+
+        public void playGame(){
+        System.out.println ("Play " + this.activeGame.getName() + ".");
+
+        if (((Gamepad) this.firstGamepad).isOn){
+            ((Gamepad) this.firstGamepad).chargeLevel -=10;
+            System.out.printf("Заряд батареи firstGamepad - %.1f\n",((Gamepad) this.firstGamepad).chargeLevel);
+            if(((Gamepad) this.firstGamepad).chargeLevel == 0){
+                ((Gamepad) this.firstGamepad).powerOff();
+            }
+        }
+        if (((Gamepad) this.secondGamepad).isOn){
+            ((Gamepad) this.secondGamepad).chargeLevel -=10;
+            System.out.printf("Заряд батареи secondGamepad - %.1f\n",((Gamepad) this.secondGamepad).chargeLevel);
+            if(((Gamepad) this.secondGamepad).chargeLevel == 0) {
+                ((Gamepad) this.secondGamepad).powerOff();
+            }
+        }
+        System.out.println();
+    }
+
+        private void checkConnectedNumber() {
+
+        if (!((Gamepad) this.firstGamepad).isOn) {
+            if (((Gamepad) this.secondGamepad).isOn) {
+                ((Gamepad) this.secondGamepad).connectedNumber = 1;
+            } else {
+
+            }
+        } else {
+            ((Gamepad) this.secondGamepad).connectedNumber = 2;
+        }
+    }
+
+        public Object getFirstGamepad() {
+        return firstGamepad; }
+
+        public Object getSecondGamepad() {
+        return secondGamepad; }
+
+    class Gamepad implements Powered {
+        private Brand brand;
         private String consoleSerial;
-        private final int connectedNumber;
-        private Color color = Color.GREEN;
+        private int connectedNumber;
+        private Color color;
         private double chargeLevel = 100.0;
         private boolean isOn;
 
@@ -42,14 +98,16 @@ public class GameConsole {
             }
         }
 
+
         public Gamepad(Brand brand, int connectedNumber) {
             this.brand = brand;
             this.connectedNumber = connectedNumber;
             consoleSerial = serial;
-            Gamepad firstGamepad = new Gamepad(brand,1);
-            Gamepad secondGamepad = new Gamepad(brand,2);
-        }
+            Gamepad firstGamepad = new Gamepad(brand, 1);
+            Gamepad secondGamepad = new Gamepad(brand, 2);
 
+
+        }
 
         public int getConnectedNumber() {
             return connectedNumber;
@@ -93,6 +151,22 @@ public class GameConsole {
 
         public void setOn(boolean on) {
             isOn = on;
+        }
+
+        @Override
+        public void powerOff() {
+            this.isOn = true;
+            GameConsole.this.checkConnectedNumber();
+            System.out.printf("Джойстик %d включается.\n", this.connectedNumber);
+            Gamepad.this.powerOn();
+            System.out.printf("Заряд батареи %.1f%% .\n\n", this.chargeLevel);
+        }
+
+        @Override
+        public void powerOn() {
+            this.isOn = false;
+            System.out.printf("Джойстик %d выключается.\n\n", this.connectedNumber);
+            GameConsole.this.checkConnectedNumber();
         }
     }
 }

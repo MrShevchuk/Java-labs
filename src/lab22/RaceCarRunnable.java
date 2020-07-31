@@ -45,7 +45,7 @@ public class RaceCarRunnable extends Car {
     void print() {
         System.out.println("__________________________");
         System.out.println(getName() + " => " + "speed: " + getRandomSpeed() + ";" + " \nprogress: " + getPassed() + "/" + getDistance() + " miles");
-        System.out.println("__________________________________________________");
+        System.out.println("_________________________________________________");
     }
 
     public int getPassed() {

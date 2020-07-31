@@ -45,7 +45,6 @@ public class Race {
         }
         System.out.println("___________________");
         System.out.println("Finish");
-
     }
 
     static void startRace(List<Thread> cars) {
@@ -72,6 +71,5 @@ public class Race {
                 }
             }
         }).start();
-
     }
 }
